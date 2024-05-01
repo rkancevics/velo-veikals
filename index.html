@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" href="./img/icon.png" type="image/icon type">
+        <title>Velo detaļas</title>
+    </head>
+    <body>
+        <header>
+            <h1>Tava Velo Pārvērtības Sākas Te!</h1>
+        </header>
+            <nav class="navbar">
+                <a href="#" class="nav-item">Mājas</a>
+                <a href="#" class="nav-item">Par mums</a>
+                <a href="#" class="nav-item">Serviss</a>
+                <a href="#" class="nav-item">Kontakti</a>
+            </nav>
+
+        <div class="container">
+            <header class="container-header">
+                <h1>Preču katalogs</h1>
+            </header>
+            <div class="main-content">
+                <div class="sidebar">
+                    <div class="filter-section">
+                        <h3>Cenu filtrs</h3>
+                            <label for="min-price">Min Cena: <span id="min-price-label">€0</span></label>
+                            <input type="range" id="min-price" min="0" max="1500" value="0" step="10" oninput="updatePriceLabel(this.value, 'min-price-label')">
+                            <label for="max-price">Max Cena: <span id="max-price-label">€1500</span></label>
+                            <input type="range" id="max-price" min="0" max="1500" value="1500" step="10" oninput="updatePriceLabel(this.value, 'max-price-label')">
+                            <button onclick="applyFilters()" class="burka">Filter</button>
+                            <button onclick="resetFilters()" class="burka">Reset</button>
+                    </div>
+                <div class="filter-section">
+                    <h3>Kategorijas</h3>
+                    <select id="category-select">
+                         <option value="">Viss</option>
+                        <option value="Pedāļi">Pedāļi</option>
+                        <option value="Riepas">Riepas</option>
+                        <option value="Rati">Rati</option>
+                        <option value="Dakšas">Dakšas</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="product-list">
+                </div>
+            </div>
+        </div>
+            <div id="productModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-body">
+                        <img id="modalImage" src="" alt="Product Image" class="modal-image">
+                        <div class="modal-text">
+                            <h2 id="modalName"></h2>
+                            <p id="modalCategory"></p>
+                            <p id="modalPrice"></p>
+                            <p id="modalDescription"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <footer class="footer">
+            <p>&copy; 2069 BERZSHTOCK All rights reserved.</p>
+        </footer>
+        <script src="script.js" defer></script>
+    </body>
+</html>
